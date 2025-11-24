@@ -1,0 +1,22 @@
+{
+    "Combinational": {
+        "Basics": {
+            "One's Complement": ["OnesComp"],
+            "Two's Complement": ["FullAdder", "OnesComp", "TwosComp"]
+        },
+
+        "Adders/Subtractors": {
+            "Adders": {
+                "HalfAdder": ["HalfAdder"],
+                "FullAdder": ["FullAdder"],
+                "FourBitAdder": ["FullAdder", "FourBitAdder"]
+            },
+            "Subtractors": {
+                "FullSubtractor": ["FullSubtractor"],
+                "FourBitSubtractor": ["FullSubtractor", "FourBitSubtractor"]
+            }
+        }
+    },
+    "Sequential": [],
+    "Copy Circuit": "copy_circ"
+}
