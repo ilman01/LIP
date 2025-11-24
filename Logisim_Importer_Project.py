@@ -102,16 +102,18 @@ class JSONMenu:
         return cls(data)
 
     def run(self):
+        history = []        # stack of dicts
+        key_history = []    # stack of parent keys
         current = self.menu
-        parent_key = None   # used for dynamic headers
+        parent_key = None
 
         while True:
-            # Final value reached (leaf)
+            # final leaf? exit and return the value
             if not isinstance(current, dict):
-                #print(f"\nFinal selection: {current}")
+                print(f"\nImported: {current}")
                 return current
 
-            # Dynamic Header
+            # Header
             if parent_key:
                 print(f"\n=== {parent_key} ===")
             else:
@@ -119,22 +121,42 @@ class JSONMenu:
 
             keys = list(current.keys())
 
-            # Print numbered choices
+            # Print choices
             for i, key in enumerate(keys, start=1):
                 print(f"{i}. {key}")
 
+            # Add Back option only if not at root
+            if history:
+                print(f"{len(keys) + 1}. Back")
+
             choice = input("\nPick a number: ")
 
-            # input validation
-            if not choice.isdigit() or not (1 <= int(choice) <= len(keys)):
+            # Validate numeric input
+            if not choice.isdigit():
                 print("Invalid choice, try again.")
                 continue
 
-            # select next level
-            picked_key = keys[int(choice) - 1]
-            parent_key = picked_key               # update header to current key
-            current = current[picked_key]         # go deeper
+            choice = int(choice)
 
+            # Handle Back
+            if history and choice == len(keys) + 1:
+                current = history.pop()
+                parent_key = key_history.pop() if key_history else None
+                continue
+
+            # Normal pick
+            if 1 <= choice <= len(keys):
+                picked_key = keys[choice - 1]
+
+                # push current state to history
+                history.append(current)
+                key_history.append(parent_key)
+
+                # move deeper
+                parent_key = picked_key
+                current = current[picked_key]
+            else:
+                print("Invalid choice, try again.")
 
 def main():
     destination_file = input("Please enter the .circ file path that you want to insert to (destination): ")
