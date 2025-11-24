@@ -142,7 +142,7 @@ def main():
     if os.path.exists("select_options.json"):
         menu = JSONMenu.from_file("select_options.json")
     else:
-        with urllib.request.urlopen("https://pastebin.com/raw/mhMuQsYb") as response:
+        with urllib.request.urlopen("https://raw.githubusercontent.com/ilman01/LIP/refs/heads/main/select_options.json") as response:
             remote_select_options = response.read().decode('utf-8')
         menu = JSONMenu.from_string(remote_select_options)
     
@@ -159,7 +159,7 @@ def main():
     if os.path.exists("master.circ"):
         transfer = CircuitTransfer("master.circ", destination_file)
     else:
-        with urllib.request.urlopen("https://pastebin.com/raw/BdXH1PfP") as response:
+        with urllib.request.urlopen("https://raw.githubusercontent.com/ilman01/LIP/refs/heads/main/master.circ") as response:
             remote_master_circ = response.read().decode('utf-8')
         transfer = CircuitTransfer("", destination_file)
         transfer.load_source_from_string(remote_master_circ)
