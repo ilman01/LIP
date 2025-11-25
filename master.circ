@@ -1425,23 +1425,23 @@
     <comp lib="4" loc="(600,740)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="8" loc="(302,112)" name="Text">
+    <comp lib="8" loc="(300,110)" name="Text">
       <a name="text" val="Load = Select_1"/>
     </comp>
-    <comp lib="8" loc="(302,85)" name="Text">
+    <comp lib="8" loc="(300,85)" name="Text">
       <a name="text" val="Shift = Select_0"/>
     </comp>
     <comp lib="8" loc="(690,175)" name="Text">
       <a name="text" val="If Select == 3, unused"/>
     </comp>
-    <comp lib="8" loc="(782,79)" name="Text">
+    <comp lib="8" loc="(780,75)" name="Text">
       <a name="text" val="If Select == 0, loop the flip-flop back on itself"/>
     </comp>
-    <comp lib="8" loc="(806,143)" name="Text">
+    <comp lib="8" loc="(805,140)" name="Text">
       <a name="text" val="If Select == 2, put D0, D1, D2, D3 into each register"/>
     </comp>
-    <comp lib="8" loc="(880,111)" name="Text">
-      <a name="text" val="If Select == 1, output of current the flip-flop goes to the next flip-flop"/>
+    <comp lib="8" loc="(880,110)" name="Text">
+      <a name="text" val="If Select == 1, output of the current flip-flop goes to the next flip-flop"/>
     </comp>
     <wire from="(220,130)" to="(400,130)"/>
     <wire from="(220,160)" to="(390,160)"/>
