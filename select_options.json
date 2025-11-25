@@ -7,16 +7,42 @@
 
         "Adders/Subtractors": {
             "Adders": {
-                "HalfAdder": ["HalfAdder"],
-                "FullAdder": ["FullAdder"],
-                "FourBitAdder": ["FullAdder", "FourBitAdder"]
+                "Half Adder": ["HalfAdder"],
+                "Full Adder": ["FullAdder"],
+                "4 Bit Adder": ["FullAdder", "FourBitAdder"]
             },
             "Subtractors": {
-                "FullSubtractor": ["FullSubtractor"],
-                "FourBitSubtractor": ["FullSubtractor", "FourBitSubtractor"]
+                "Full Subtractor": ["FullSubtractor"],
+                "4 Bit Subtractor": ["FullSubtractor", "FourBitSubtractor"]
             }
         }
     },
-    "Sequential": [],
+    "Sequential": {
+        "Latches/Flip-Flops": {
+            "Latches": {
+                "SR Latch": ["SR_Latch"],
+                "SR Latch - Clocked": ["Clocked_SR_Latch"],
+                "D Latch": ["Clocked_SR_Latch", "D_Latch"]
+            },
+            "Flip-Flops": {
+                "SR Flip-Flop": ["Clocked_SR_Latch", "SR_FlipFlop"],
+                "D Flip-Flop": ["Clocked_SR_Latch", "D_Latch", "D_FlipFlop"],
+                "JK Flip-Flop": ["JK_FlipFlop"],
+                "T Flip-Flop": ["T_FlipFlop"]
+            }
+        },
+        "Registers": {
+            "Basic Registers": {
+                "2 Bit Register": ["TwoBitRegister"],
+                "4 Bit Register": ["FourBitRegister"],
+                "4 Bit Register With Load": ["FourBitRegister", "FourBitRegisterWithLoad"]
+            },
+            "Shift Registers": {
+                "4 Bit Right Shift Register": ["FourBitRightShiftRegister"],
+                "4 Bit Left Shift Register": ["FourBitLeftShiftRegister"],
+                "4 Bit Parallel Load Register": ["FourBitParallelLoad"]
+            }
+        }
+    },
     "Copy Circuit": "copy_circ"
 }
