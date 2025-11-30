@@ -42,6 +42,18 @@
                 "4 Bit Left Shift Register": ["FourBitLeftShiftRegister"],
                 "4 Bit Parallel Load Register": ["FourBitParallelLoad"]
             }
+        },
+        "Memory/RAM": {
+            "Static RAM (SRAM)": {
+                "SRAM Integrated Circuit": ["SRAM_Integrated_Circuit"],
+                "SRAM With 4 Words, 1 Bit per Word (Without Decoder)": ["SRAM_Integrated_Circuit", "SRAM_1_Bit_Word"],
+                "SRAM With 4 Words, 1 Bit per Word": ["SRAM_Integrated_Circuit", "SRAM_1_Bit_Word", "Ram_4_Word_1_Bit"],
+                "SRAM With 16 Words, 1 Bit per Word": ["SRAM_Integrated_Circuit", "SRAM_1_Bit_Word", "Ram_16_Word_1_Bit"],
+                "SRAM With 16 Words, 1 Bit per Word (Coincident Selection)": ["SRAM_Integrated_Circuit", "SRAM_1_Bit_Word", "Ram_16_Word_1_Bit_With_2_Decoder"]
+            },
+            "Dynamic RAM (DRAM)": {
+                "THIS OPTION IS NOT YET AVAILABLE" : []
+            }
         }
     },
     "Copy Circuit": "copy_circ"
